@@ -7,12 +7,12 @@ import store from "../store";
 import './App.css';
 
 function App() {
-  const { contacts } = store.getState();
+  const { contacts, user, activeUserId } = store.getState();
 
   return (
     <div className="App">
       <SideBar contacts={_.values(contacts)} />
-      <Main />
+      <Main user={user} activeUserId={activeUserId} />
     </div>
   );
 }
